@@ -30,3 +30,11 @@ go.work.sum
 # Editor/IDE
 # .idea/
 # .vscode/
+
+# Bazel build output and cache directories
+bazel-bin/
+bazel-c-compiler-go/
+bazel-out/
+bazel-testlogs/
+
+MODULE.bazel.lock

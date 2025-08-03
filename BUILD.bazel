@@ -1,0 +1,17 @@
+load("@gazelle//:def.bzl", "gazelle")
+load("@rules_go//go:def.bzl", "go_binary", "go_library")
+
+gazelle(name = "gazelle")
+
+go_library(
+    name = "c-compiler-go_lib",
+    srcs = ["main.go"],
+    importpath = "Rawdogg/c-compiler-go",
+    visibility = ["//visibility:private"],
+)
+
+go_binary(
+    name = "c-compiler-go",
+    embed = [":c-compiler-go_lib"],
+    visibility = ["//visibility:public"],
+)
